@@ -4,20 +4,23 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.16.5/math.min.js"></script>
     <title>Calculator</title>
     <style>
-        html{
+        html {
             background-image: url(https://images.unsplash.com/photo-1526666923127-b2970f64b422);
             background-repeat: no-repeat;
             background-size: cover;
             background-position: bottom center;
             height: 100vh;
         }
-        h1{
+
+        h1 {
             font-family: algerian;
-            color:bisque;
+            color: bisque;
             text-shadow: 3px 3px gray;
         }
+
         .container {
             margin: 0 auto;
             width: fit-content;
@@ -91,7 +94,6 @@
             background-color: darkorange;
             color: white;
         }
-       
     </style>
 </head>
 
@@ -190,11 +192,21 @@
             document.getElementById('result').value += num;
             return num;
         }
+        // function solve() {
+        //     let x = document.getElementById('result').value;
+        //     // let y = eval((x).replace(/\b0(\d+)\b/g, '$1'));
+        //     //let y = eval(x)
+        //     let y = eval(x.split(/([\+\-\*\/])/).map(a => parseFloat(a) || a).join(''))
+        //     document.getElementById('result').value = y;
+        //     return y;
+        // }
+
         function solve() {
             let x = document.getElementById('result').value;
-            let y = eval(x);
+            
+       
+            y = math.eval(x);
             document.getElementById('result').value = y;
-            return y;
         }
 
         function clearScreen() {
@@ -202,4 +214,5 @@
         }
     </script>
 </body>
+
 </html>
