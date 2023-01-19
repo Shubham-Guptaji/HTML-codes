@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+	<script>
+		let fruits = ["apple", "banana", "orange", "strawberry", "grape", "pineapple", "mango", "pear", "watermelon", "kiwi", "lemon", "lime", "coconut", "peach", "plum", "blueberry", "raspberry", "blackberry", "cantaloupe", "honeydew", "pomegranate", "avocado", "fig", "grapes", "papaya", "guava", "passion fruit", "jackfruit", "durian", "lychee"];
+		let usedFruits = new Set();
+		let count = 0;
+		var aw = 0;
+		let intervalId = setInterval(function () {
+			if (fruits.length === usedFruits.size) {
+				clearInterval(intervalId);
+				return;
+			}
+			let randomWord;
+			do {
+				randomWord = fruits[Math.floor(Math.random() * fruits.length)];
+			} while (usedFruits.has(randomWord))
+			usedFruits.add(randomWord);
+			var searchUrl = "https://www.bing.com/search?q=" + randomWord;
+			window.open(searchUrl, "_blank");
+			count++;
+			if (count === 30) {
+				clearInterval(intervalId);
+			}
+			aw+=1;
+			console.log(aw);
+		}, 20000);
+
+
+	</script>
+</body>
+
+</html>
